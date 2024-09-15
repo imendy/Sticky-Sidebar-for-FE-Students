@@ -36,6 +36,7 @@ aside {
   position: sticky;
   top: var(--aside-top);
 }
+```
 
 ### `position: sticky;`
 
@@ -67,6 +68,8 @@ main {
   grid-template-columns: 200px 1fr;
   gap: var(--gap);
 }
+```
+
 
 ### `display: grid;`
 
@@ -102,7 +105,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+```
 
 These styles ensure that there are no unexpected margins or padding around the elements. This is important for a sticky sidebar because we want everything positioned exactly as expected when the user scrolls.
 
@@ -114,6 +117,7 @@ aside {
   max-height: 100vh;
   overflow-y: auto;
 }
+```
 
 While this wasn’t explicitly in the CSS, it's a common practice to ensure that the sidebar doesn't extend beyond the viewport.
 
