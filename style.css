@@ -1,0 +1,127 @@
+:root {
+    /* Defining variables for colors, font sizes, spacing, and dimensions for reusability and easier maintenance */
+    
+    --main-bg-color: #fff; /* Background color for the entire page */
+    --text-color: #111; /* Primary text color */
+    --header-footer-bg-color: lightblue; /* Background color for header and footer */
+    --widget-light-color: lightblue; /* Background color for the light-themed widget */
+    
+    --base-font-size: 16px; /* Base font size for body text */
+    --h1-font-size: 1rem; /* Font size for the main heading */
+    --p-font-size: 10px; /* Font size for paragraphs */
+    
+    --padding-block: 2rem; /* Vertical padding for elements such as header, footer, and main section */
+    --padding-inline: 3rem; /* Horizontal padding to center content within the page */
+    
+    --page-max-width: 900px; /* Maximum width for content to prevent it from stretching too wide */
+    --gap: 2rem; /* Gap between columns in the grid layout */
+    
+    --aside-top: 2rem; /* Top offset for the sticky sidebar to keep it from touching the top of the page */
+    --widget-height: 150px; /* Height of the widget inside the sidebar */
+    --widget-width: 100px; /* Width of the widget inside the sidebar */
+    --border-radius: 8px; /* Rounded corners for the widget for a softer look */
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Removing default margins and paddings from all elements to have more control over layout */
+    /* Ensuring that the total width and height of elements include padding and border for consistent sizing */
+  }
+  
+  body {
+    font-family: system-ui, sans-serif;
+    /* Setting a modern, system-based font for readability */
+    
+    font-size: var(--base-font-size);
+    /* Using the base font size for the body content */
+    
+    line-height: 1.8;
+    /* Setting line height for better readability by increasing the space between lines */
+    
+    color: var(--text-color);
+    /* Setting the primary text color */
+    
+    background-color: var(--main-bg-color);
+    /* Setting the background color for the entire page */
+  }
+  
+  header,
+  footer {
+    padding-block: var(--padding-block);
+    /* Adding vertical padding to create space within the header and footer */
+    
+    color: #fff;
+    /* Setting text color to white for contrast with the lightblue background */
+    
+    background: var(--header-footer-bg-color);
+    /* Setting the background color of both header and footer */
+  }
+  
+  main,
+  .page-width {
+    max-width: var(--page-max-width);
+    /* Limiting the width of the main content and other page elements to avoid stretching the layout */
+    
+    padding-inline: var(--padding-inline);
+    /* Adding horizontal padding to center the content within the available space */
+    
+    margin-inline: auto;
+    /* Centering the main content within the viewport */
+  }
+  
+  main {
+    padding-block: var(--padding-block);
+    /* Adding vertical padding to the main section for spacing */
+    
+    display: grid;
+    /* Using CSS Grid layout to create two columns: one for the sidebar (aside) and one for the main content (article) */
+    
+    grid-template-columns: 200px 1fr;
+    /* Defining two columns: 200px width for the sidebar, and 1fr (remaining space) for the main content */
+    
+    align-items: start;
+    /* Ensuring that items in the grid align at the top */
+    
+    gap: var(--gap);
+    /* Setting the space between the sidebar and the main content */
+  }
+  
+  aside {
+    position: sticky;
+    /* Setting the position of the sidebar to 'sticky' so it stays fixed within the viewport once the user scrolls past it */
+    
+    top: var(--aside-top);
+    /* Defining how far from the top of the viewport the sticky sidebar should be when scrolling */
+  }
+  
+  .widget {
+    height: var(--widget-height);
+    /* Setting a fixed height for the widget */
+    
+    width: var(--widget-width);
+    /* Setting a fixed width for the widget */
+    
+    border-radius: var(--border-radius);
+    /* Giving the widget rounded corners for a softer appearance */
+  }
+  
+  .widget.light {
+    background: var(--widget-light-color);
+    /* Applying a background color to the light-themed widget */
+  }
+  
+  h1 {
+    font-size: var(--h1-font-size);
+    /* Setting the font size for the main heading */
+    
+    font-weight: 600;
+    /* Making the heading bold for emphasis */
+  }
+  
+  p {
+    font-size: var(--p-font-size);
+    /* Setting the font size for paragraphs to be smaller */
+  }
+  
